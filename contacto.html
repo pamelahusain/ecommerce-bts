@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | BTS Army Forever</title>
+  <link rel="stylesheet" href="./CSS/styles.css" />
+</head>
+
+<body>
+
+   <!-- ENCABEZADO -->
+<header id="INICIO" class="banner">
+    <a href="./" target="_blank" rel="noopener noreferrer" class="logo-header">
+      <img src="./RECURSOS AUDIOVISUALES/pngwing.com.png" width="15%" alt="Logo Inicio BTS Army" />
+    </a>
+  
+    <h1>
+      <img src="https://i.pinimg.com/736x/91/8e/03/918e0385a56572b3dfa3102675ec08f4.jpg" width="5%" alt="Logo BTS" />
+      BTS ARMY FOREVER FANSTORE
+    </h1>
+  
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="registro.html">Regístrate</a></li>
+        <li><a href="beneficios.html">Obtén beneficios</a></li>
+        <li><a href="./talles.html">Guía de talles</a></li>
+        <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+        <li><a href="./contacto.html">Contacto</a></li> 
+      </ul>
+    </nav>
+  
+    <img src="./RECURSOS AUDIOVISUALES/Adobe Express - file.png" width="10%" alt="Flor de Sakura">
+  </header>
+
+  <!-- Sección de ubicación -->
+  <section class="contacto">
+    <h2>📍 Acá nos podés encontrar:</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.8540373993733!2d-58.56552022421057!3d-34.607852272952954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb822f7d669fd%3A0xc1b63fa3656ee422!2sMariano%20Moreno%204737%2C%20B1678%20Caseros%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1750044244253!5m2!1ses-419!2sar" 
+      width="100%" 
+      height="400" 
+      style="border:0; border-radius: 10px;" 
+      allowfullscreen 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <main class="contacto">
+    <h2>
+        <img src="./RECURSOS AUDIOVISUALES/Adobe Express - file (2).png" width="19%" alt=""> ¡Comunicate con nosotros!</h2>
+
+    <form action="https://formspree.io/f/mdkzzryn" method="POST">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="Ingresa tu teléfono">
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required placeholder="Ingresa tu e-mail">
+
+      <label for="tema">Motivo de contacto</label>
+      <select name="tema" id="tema">
+        <option value="consulta">Consulta</option>
+        <option value="sugerencia">Sugerencia</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje aquí..."></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 BTS ARMY FOREVER FANSTORE</p>
+    <a href="./index.html">Página principal</a>
+  </footer>
+</body>
+</html>

@@ -16,9 +16,9 @@ Este proyecto fue desarrollado como parte de una práctica de HTML y CSS.
 
 ## Enlace al sitio
 
-👉 [Ver sitio publicado](https://pamelahusain.github.io/ecommerce-bts/)
+👉 [Ver sitio publicado](https://pamelahusain.github.io/pre-entrega-tp/)
 
 ## Autor
 
-- Nombre: PAMELA RODRIGUEZ HUSAIN  
-- Curso: DESARROLLO FRONT END
+- Nombre: [PAMELA RODRIGUEZ HUSAIN]
+- Curso: [DESARROLLO FRONT END]
