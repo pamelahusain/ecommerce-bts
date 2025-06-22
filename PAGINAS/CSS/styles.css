@@ -1,0 +1,726 @@
+/* -------------------------------------
+   FUENTES Y COLORES
+------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap');
+
+:root {
+  --color1: #008fff;
+  --color2: #639dff;
+  --color3: #acaeff;
+  --color4: #dec2ff;
+  --color5: #ffd7ff;
+
+  --texto: #4a4a4a;
+  --fondo: #fff8d6;
+  --sombra: rgba(0, 0, 0, 0.05);
+
+  --lila: #b57edc;
+  --menta: #c2f0e3;
+  --rosa: #f78fb3;
+  --rosa-claro: #ffe5ec;
+  --celeste: #d0f0ff;
+}
+/* -------------------------------------
+   HEADER 
+------------------------------------- */
+header.banner {
+  background: linear-gradient(135deg, var(--color1), var(--color3));
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+header.banner h1 {
+  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 10px;
+}
+
+header.banner p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: 'Comic Neue', cursive;
+  color: #fff8f8;
+}
+
+/* -------------------------------------
+   ALL PAGES
+------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Neue', cursive;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* -------------------------------------
+   NAV */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+nav ul li a {
+  color: #6d2b50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #b57edc;
+}
+
+/* -------------------------------------
+   TEXTO DE INTRO EN INICIO
+------------------------------------- */
+.intro-text {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 700px;
+  background-color: var(--rosa-claro);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #b03060;
+  font-family: 'Comic Neue', cursive;
+  line-height: 1.6;
+}
+
+.intro-text strong {
+  font-size: 1.6rem;
+  color: #d87fa0;
+}
+
+.intro-text a {
+  color: white;
+  background-color: var(--lila);
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.intro-text a:hover {
+  background-color: var(--rosa);
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+/* -------------------------------------
+   SECCION PRINCIPAL FONDO */
+section.section-fondo {
+  background-image: url('2831104.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* -------------------------------------
+   TARJETAS DE PRODUCTOS */
+.productos, .productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: var(--lila);
+  border: 2px solid var(--menta);
+  width: 260px;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* -------------------------------------
+   RESEÑAS */
+.reseñas {
+  background-color: var(--celeste);
+  padding: 20px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.reseña {
+  background-color: var(--menta);
+  border-left: 4px solid var(--lila);
+  border-radius: 10px;
+  padding: 12px;
+  font-style: italic;
+}
+
+/* -------------------------------------
+   CONTACTO */
+.main-contacto, .contacto {
+  background-color: var(--menta);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contacto h2 {
+  font-family: 'Pacifico', cursive;
+  color: #d87fa0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacto input,
+.contacto select,
+.contacto textarea {
+  padding: 12px;
+  border: 2px solid var(--rosa);
+  border-radius: 10px;
+  background: white;
+  font-size: 1rem;
+}
+
+.contacto input:focus,
+.contacto select:focus,
+.contacto textarea:focus {
+  outline: none;
+  border-color: var(--lila);
+}
+
+.contacto button {
+  background-color: var(--lila);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.contacto button:hover {
+  background-color: var(--rosa);
+  transform: scale(1.03);
+}
+
+/* -------------------------------------
+   GUÍA DE TALLES */
+   .main-talles {
+    background-color: var(--menta);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+  
+  .main-talles h2 {
+    font-family: 'Pacifico', cursive;
+    color: #8e44ad;
+    margin-bottom: 20px;
+  }
+  
+  .main-talles img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 50%;
+    border: 4px solid var(--lila);
+    border-radius: 15px;
+  }
+  
+  
+/* -------------------------------------
+   FOOTER */
+footer {
+  background-color: var(--rosa-claro);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #6a359c;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #d87fa0;
+}
+
+/* -------------------------------------
+   SECCIONES NUEVAS */
+#nosotros, #faq, #registro, #beneficios {
+  background-color: var(--rosa-claro);
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+  color: var(--texto);
+}
+
+#nosotros {
+  background-color: var(--color5);
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px var(--sombra);
+}
+
+.nosotros-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.nosotros-flex img {
+  max-width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px var(--sombra);
+}
+
+.nosotros-texto {
+  max-width: 600px;
+  text-align: center;
+}
+
+.nosotros-texto h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: var(--color2);
+  margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color1);
+}
+
+
+/* Imagen a la izquierda */
+/* Contenedor con imagen + texto lado a lado */
+.nosotros-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Imagen decorativa */
+.nosotros-flex img {
+  width: 180px;
+  max-width: 25%;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Texto y título */
+.nosotros-texto {
+  max-width: 600px;
+}
+
+.nosotros-texto h2 {
+  font-size: 2.2rem;
+  font-family: 'Pacifico', cursive;
+  color: #b03060;
+  margin-bottom: 15px;
+}
+
+.nosotros-texto p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Comic Neue', cursive;
+  color: #832f62;
+  line-height: 1.8;
+}
+
+
+/* Texto centrado */
+.nosotros-texto {
+  max-width: 600px;
+  text-align: center;
+}
+
+.nosotros-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #b03060;
+  font-family: 'Pacifico', cursive;
+}
+
+.nosotros-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+
+/* Productos */
+#productos {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.productos-grid .card {
+  background-color: var(--lila);
+  border: 2px solid var(--menta);
+  width: 280px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.productos-grid .card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.productos-grid .card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.productos-grid .card h3 {
+  margin-bottom: 10px;
+  color: #832f62;
+}
+
+.productos-grid .card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #4a4a4add;
+}
+
+.productos-grid .card button {
+  background-color: var(--rosa);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.productos-grid .card button:hover {
+  background-color: #d86891;
+}
+
+/* Preguntas frecuentes */
+#faq article {
+  background-color: var(--menta);
+  border-left: 5px solid var(--lila);
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#faq article h4 {
+  color: #8b3a67;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+#faq article p {
+  font-size: 1rem;
+  color: #3a3a3acc;
+  line-height: 1.5;
+}
+
+/* Formulario de registro */
+#registro form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#registro input[type="text"],
+#registro input[type="email"],
+#registro input[type="password"] {
+  padding: 12px;
+  border: 2px solid var(--rosa);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Comic Neue', cursive;
+  transition: border-color 0.3s;
+}
+
+#registro input[type="text"]:focus,
+#registro input[type="email"]:focus,
+#registro input[type="password"]:focus {
+  outline: none;
+  border-color: var(--lila);
+}
+
+#registro button {
+  background-color: var(--lila);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#registro button:hover {
+  background-color: var(--rosa);
+}
+
+/* Beneficios */
+#beneficios ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+#beneficios ul li {
+  background-color: var(--menta);
+  color: #704268;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Video */
+.video-section {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.video-section iframe {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 100%;
+  height: auto;
+}
+/* -------------------------------------
+   NUBE DE REDES SOCIALES ESTILO HELADO
+------------------------------------- */
+.nube-redes {
+  background: linear-gradient(145deg, var(--color5), var(--color3), var(--color4));
+  padding: 35px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px var(--sombra);
+  max-width: 600px;
+  margin: 50px auto;
+  border: 5px dashed var(--color2);
+  text-align: center;
+  color: var(--color1);
+  position: relative;
+}
+
+.nube-redes::before {
+  content: "🍦";
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  left: 25px;
+}
+
+.nube-redes h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color2);
+}
+
+.nube-redes p {
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.nube-redes a {
+  background-color: var(--color1);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.nube-redes a:hover {
+  background-color: var(--color3);
+  transform: scale(1.05);
+}
+
+/* -------------------------------------
+   BLOQUE BTS ARMY ESTILO NUBE-HELADO
+------------------------------------- */
+.nube-bts {
+  background: linear-gradient(145deg, var(--color4), var(--color5), var(--color3));
+  padding: 40px 30px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 12px 25px var(--sombra);
+  max-width: 650px;
+  margin: 50px auto;
+  border: 4px dotted var(--color2);
+  position: relative;
+}
+
+.nube-bts::before {
+  content: '💜';
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  left: 25px;
+  color: var(--color1);
+}
+
+.nube-bts h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color1);
+}
+
+.nube-bts h4 {
+  font-size: 1.5rem;
+  color: var(--color3);
+  margin: 20px 0 10px;
+}
+
+.nube-bts p,
+.nube-bts a {
+  font-size: 1.2rem;
+  margin: 10px 5px;
+}
+
+.nube-bts a {
+  background-color: var(--color2);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nube-bts a:hover {
+  background-color: var(--color1);
+  transform: scale(1.05);
+}
+
+.nube-bts .bts-footer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: var(--color1);
+  font-style: italic;
+}
+.nube-redes, .nube-bts {
+  transition: transform 0.4s ease;
+}
+
+.nube-redes:hover, .nube-bts:hover {
+  transform: scale(1.02);
+}
+
+/* -------------------------------------
+   RESPONSIVE AJUSTES
+------------------------------------- */
+@media (max-width: 768px) {
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .productos, .productos-grid {
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .productos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #registro form {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  #beneficios ul {
+    padding: 0 10px;
+  }
+
+  #nosotros p {
+    padding: 0 10px;
+  }
+}
+
