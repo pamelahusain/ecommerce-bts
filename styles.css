@@ -11,7 +11,8 @@
   --color5: #ffd7ff;
 
   --texto: #4a4a4a;
-  --fondo: #fff8d6;
+  --fondo: var(--color5);
+
   --sombra: rgba(0, 0, 0, 0.05);
 
   --lila: #b57edc;
