@@ -743,3 +743,32 @@ footer a:hover {
     max-height: 315px;
   }
 }
+/* -------------------------------------
+   CAJA DESTACADA CON LOGO Y TEXTO
+------------------------------------- */
+.caja-bts {
+  background-color: var(--rosa-claro);
+  border: 3px solid var(--rosa);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  max-width: 90%;
+  margin: 30px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.caja-bts img {
+  width: 50px;
+  height: auto;
+}
+
+.caja-bts h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #832f62;
+  font-family: 'Comic Neue', cursive;
+  margin: 0;
+}
