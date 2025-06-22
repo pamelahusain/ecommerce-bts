@@ -689,38 +689,57 @@ footer a:hover {
 }
 
 /* -------------------------------------
-   RESPONSIVE AJUSTES
+   AJUSTES RESPONSIVE PARA CELULARES
 ------------------------------------- */
 @media (max-width: 768px) {
-
+  /* Menú vertical y centrado */
   nav ul {
     flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+  }
+  nav ul li {
+    text-align: center;
   }
 
-  .productos, .productos-grid {
-    gap: 15px;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  .productos-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #registro form {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  #beneficios ul {
-    padding: 0 10px;
-  }
-
-  #nosotros p {
-    padding: 0 10px;
+  /* Ajustes generales de padding */
+  header.banner, main, .section-fondo {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
 
+@media (max-width: 500px) {
+  /* Tamaño de textos */
+  header.banner h1 {
+    font-size: 1.6rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .intro-text {
+    font-size: 1rem !important;
+    padding: 15px !important;
+    margin: 20px 10px !important;
+  }
+
+  /* Imágenes más adaptadas */
+  figure img, .section-fondo img {
+    width: 90%;
+    max-width: none;
+  }
+
+  /* Padding más reducido en secciones */
+  header.banner, main, .section-fondo {
+    padding: 20px 10px !important;
+  }
+
+  /* Video responsive */
+  section iframe {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 315px;
+  }
+}
