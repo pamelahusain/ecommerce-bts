@@ -1,33 +1,48 @@
 /* -------------------------------------
    FUENTES Y COLORES
 ------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&family=Fredericka+the+Great&family=Give+You+Glory&display=swap');
 
 :root {
-  --color1: #008fff;
-  --color2: #639dff;
-  --color3: #acaeff;
-  --color4: #dec2ff;
-  --color5: #ffd7ff;
+  --color1: #ffa6f8;
+  --color2: #4788f8;
+  --color3: #9597f1;
+  --color4: #c08ff8;
+  --color5: #f784f7;
 
   --texto: #4a4a4a;
   --fondo: var(--color5);
 
   --sombra: rgba(0, 0, 0, 0.05);
 
-  --lila: #b57edc;
-  --menta: #c2f0e3;
-  --rosa: #f78fb3;
-  --rosa-claro: #ffe5ec;
-  --celeste: #d0f0ff;
+  --lila: #b45ef1;
+  --menta: #a4f5de;
+  --rosa: #f879a5;
+  --rosa-claro: #ffc8d7;
+  --celeste: #5cb8e6;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Give You Glory', cursive;
+}
+
+body {
+  background-image: url('https://i.pinimg.com/736x/c9/78/41/c978416c4ba1682671453c4dc763040d.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
 /* -------------------------------------
    HEADER 
 ------------------------------------- */
 header.banner {
   background: linear-gradient(135deg, var(--color1), var(--color3));
   color: white;
-  padding: 60px 20px;
+  padding: 40px 10px;
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -35,37 +50,21 @@ header.banner {
 }
 
 header.banner h1 {
-  font-size: 3rem;
-  font-family: 'Pacifico', cursive;
-  margin-bottom: 10px;
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 header.banner p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 300;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Give You Glory', cursive;
   color: #fff8f8;
 }
 
 /* -------------------------------------
-   ALL PAGES
+   NAV
 ------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Comic Neue', cursive;
-}
-
-body {
-  background-color: var(--fondo);
-  color: var(--texto);
-  padding: 20px;
-  line-height: 1.6;
-}
-
-/* -------------------------------------
-   NAV */
 nav ul {
   display: flex;
   justify-content: center;
@@ -75,7 +74,8 @@ nav ul {
 }
 
 nav ul li a {
-  color: #6d2b50;
+  color: #6f3e59;
+  font-family: 'Give You Glory', cursive;
   text-decoration: none;
   font-weight: bold;
 }
@@ -95,21 +95,21 @@ nav ul li a:hover {
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-  font-weight: bold;
+  font-weight: 400;
   font-size: 1.5rem;
-  color: #b03060;
-  font-family: 'Comic Neue', cursive;
+  color: #eb8caf;
+  font-family: 'Give You Glory', cursive;
   line-height: 1.6;
 }
 
 .intro-text strong {
   font-size: 1.6rem;
-  color: #d87fa0;
+  color: #c760ff;
 }
 
 .intro-text a {
-  color: white;
-  background-color: var(--lila);
+  color: rgb(255, 249, 89);
+  background-color: var(--rosa-claro);
   padding: 10px 20px;
   border-radius: 15px;
   text-decoration: none;
@@ -128,7 +128,6 @@ nav ul li a:hover {
 /* -------------------------------------
    SECCION PRINCIPAL FONDO */
 section.section-fondo {
-  background-image: url('2831104.jpg');
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
@@ -202,7 +201,7 @@ section.section-fondo {
 }
 
 .contacto h2 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Fredericka The Great', cursive;
   color: #d87fa0;
   margin-bottom: 20px;
   text-align: center;
@@ -622,7 +621,7 @@ footer a:hover {
    BLOQUE BTS ARMY ESTILO NUBE-HELADO
 ------------------------------------- */
 .nube-bts {
-  background: linear-gradient(145deg, var(--color4), var(--color5), var(--color3));
+  background: linear-gradient(145deg, var(--color1), var(--color5), var(--color3));
   padding: 40px 30px;
   border-radius: 50px;
   text-align: center;
@@ -645,7 +644,7 @@ footer a:hover {
 .nube-bts h3 {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--color1);
+  color: var(--color2);
 }
 
 .nube-bts h4 {
@@ -769,7 +768,7 @@ footer a:hover {
 .caja-bts h2 {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #832f62;
-  font-family: 'Comic Neue', cursive;
+  color: #e32698;
+  font-family: 'Fredericka The Great', cursive;
   margin: 0;
 }
