@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+       <!-- FAVICON (ícono en la pestaña) -->
+<link rel="icon" href="./favicon.ico" type="image/x-icon" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tienda Army Forever BTS</title>
@@ -39,21 +41,22 @@
     <img src="./RECURSOS AUDIOVISUALES/Adobe Express - file.png" width="10%" alt="Flor de Sakura">
   </header>
 
-<section id="registro" style="max-width: 600px; margin: 20px auto; padding: 40px; background-color: var(--rosa-claro); border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-  <h2>Regístrate y obtené descuentos exclusivos</h2>
-  <form action="#" method="POST" class="contacto">
-    <label for="nombre">Nombre completo:</label> 
-    <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre"/>
-
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required placeholder="Ingresa tu e-mail" />
-
-    <label for="password">Contraseña:</label>
-    <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" />
-
-    <button type="submit">Registrarme</button>
-  </form>
-</section>
+  <section id="registro" class="registro-section">
+    <h2>Regístrate y obtené descuentos exclusivos</h2>
+    <form action="#" method="POST" class="contacto">
+      <label for="nombre">Nombre completo:</label> 
+      <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre" />
+  
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required placeholder="Ingresa tu e-mail" />
+  
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" minlength="6" />
+  
+      <button type="submit">Registrarme</button>
+    </form>
+  </section>
+  
 
 <footer>
     <p>&copy; 2025 BTS ARMY FOREVER FANSTORE</p>

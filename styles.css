@@ -499,6 +499,14 @@ footer a:hover {
   flex-direction: column;
   gap: 15px;
 }
+.registro-section {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: var(--rosa-claro);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
 #registro input[type="text"],
 #registro input[type="email"],
