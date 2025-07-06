@@ -1,28 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-       <!-- FAVICON (ícono en la pestaña) -->
-<link rel="icon" href="./favicon.ico" type="image/x-icon" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tienda Army Forever BTS</title>
-        <link rel="stylesheet" href="./styles.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap" rel="stylesheet" />
-      </head>
-      
+<head>
+  <!-- FAVICON (ícono en la pestaña) -->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Army Forever BTS - Productos</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap para diseño responsive y estilos base -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+
+  <style>
+    /* Estilos para las tarjetas de producto */
+    .card {
+      border: 2px solid #a4f5de;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    /* Botones personalizados */
+    .btn-custom {
+      background-color: #f879a5;
+      color: white;
+      font-weight: bold;
+    }
+    .btn-custom:hover {
+      background-color: #d86891;
+    }
+  </style>
+</head>
 <body>
-  <!-- ENCABEZADO / HEADER -->
-  <header id="INICIO" class="banner">
+
+   <!--ENCABEZADO - HEADER-->
+   <header id="INICIO" class="banner">
     <a href="./" target="_blank" rel="noopener noreferrer" class="logo-header">
       <img src="./RECURSOS AUDIOVISUALES/pngwing.com.png" width="15%" alt="Logo Inicio BTS Army" />
     </a>
 
-    <h1>
-    
-      BTS ARMY FOREVER FANSTORE
-    </h1>
+    <h1>BTS ARMY FOREVER FANSTORE</h1>
 
     <!-- NAVEGACIÓN -->
     <nav>
@@ -35,32 +57,120 @@
         <li><a href="talles.html">Guía de talles</a></li>
         <li><a href="preguntas.html">Preguntas frecuentes</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li>
+          <a href="carrito.html" id="carrito-enlace">
+            🛒 <span id="cantidad-carrito">(0)</span>
+          </a>
+        </li>
       </ul>
     </nav>
 
     <img src="./RECURSOS AUDIOVISUALES/Adobe Express - file.png" width="10%" alt="Flor de Sakura">
   </header>
 
-<section class="productos" style="padding: 40px; max-width: 1100px; margin: 0 auto;">
-  <h2>Productos</h2>
-  <div class="card">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_920538-MLA74440737644_022024-O.webp" alt="Llavero de peluche" />
-    <h3>Llavero de peluche BT21</h3>
-    <p>Llavero de peluche en 7 modelos diferentes.</p>
-    <p><strong>Precio: $10.000</strong></p>
-  </div>
-  <div class="card">
-    <img src="https://i.pinimg.com/736x/5a/79/a9/5a79a9ee5f7b08862af57a3b09a1220d.jpg" alt="Playera de bts" />
-    <h3>Playera de BTS</h3>
-    <p>Playera de algodón, en talles xs, s, m, l, xl, xxl y xxxl</p>
-    <p><strong>Precio: $20.000</strong></p>
-  </div>
-  <!-- Añadí más productos similares -->
-</section>
+  <!-- SECCIÓN DE PRODUCTOS -->
+  <main class="container py-5">
 
-<footer>
+    <div class="row justify-content-center" id="productos-container"></div>
+
+    <div class="text-center mt-4">
+      <a href="carrito.html" target="_blank" class="btn btn-outline-primary" id="btn-ir-carrito" style="display:none;">Ir al carrito</a>
+    </div>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
     <p>&copy; 2025 BTS ARMY FOREVER FANSTORE</p>
     <a href="./index.html">Página principal</a>
   </footer>
+
+  <!-- SCRIPT: lógica de productos y carrito -->
+  <script>
+    const productos = [
+      {
+        id: 1,
+        nombre: "Llavero de peluche BT21",
+        descripcion: "Llavero de peluche en 7 modelos diferentes.",
+        precio: 10000,
+        imagen: "https://http2.mlstatic.com/D_NQ_NP_920538-MLA74440737644_022024-O.webp"
+      },
+      {
+        id: 2,
+        nombre: "Playera de BTS",
+        descripcion: "Playera de algodón, en talles xs, s, m, l, xl, xxl y xxxl",
+        precio: 20000,
+        imagen: "https://i.pinimg.com/736x/5a/79/a9/5a79a9ee5f7b08862af57a3b09a1220d.jpg"
+      }
+    ];
+
+    const container = document.getElementById("productos-container");
+    const contador = document.getElementById("cantidad-carrito");
+    const btnIrCarrito = document.getElementById("btn-ir-carrito");
+
+    function actualizarContadorCarrito() {
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      if (carrito.length === 0) {
+        contador.style.display = "none";
+        btnIrCarrito.style.display = "none";
+      } else {
+        const totalCantidad = carrito.reduce((acc, prod) => acc + (prod.cantidad || 1), 0);
+        contador.textContent = totalCantidad;
+        contador.style.display = "inline-block";
+        btnIrCarrito.style.display = "inline-block";
+      }
+    }
+
+    function renderProductos() {
+      container.innerHTML = "";
+      productos.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "col-md-4 mb-4";
+        card.innerHTML = `
+          <div class="card h-100 p-3">
+            <img src="${p.imagen}" class="card-img-top" alt="${p.nombre}">
+            <div class="card-body">
+              <h5 class="card-title">${p.nombre}</h5>
+              <p class="card-text">${p.descripcion}</p>
+              <p><strong>Precio: $${p.precio}</strong></p>
+              <button class="btn btn-custom agregar-carrito" data-id="${p.id}">Agregar al carrito</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function agregarAlCarrito(id) {
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const producto = productos.find(p => p.id === id);
+      if (!producto) return;
+
+      const productoEnCarrito = carrito.find(item => item.id === id);
+      if (productoEnCarrito) {
+        productoEnCarrito.cantidad = (productoEnCarrito.cantidad || 1) + 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      actualizarContadorCarrito();
+      alert("Producto agregado al carrito 💜");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderProductos();
+      actualizarContadorCarrito();
+
+      document.body.addEventListener("click", e => {
+        if (e.target.classList.contains("agregar-carrito")) {
+          const id = parseInt(e.target.getAttribute("data-id"));
+          if (!isNaN(id)) {
+            agregarAlCarrito(id);
+          }
+        }
+      });
+    });
+  </script>
+  <script src="carrito-utils.js"></script>
 </body>
 </html>

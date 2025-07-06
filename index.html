@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tienda Army Forever BTS</title>
 
- <!-- FAVICON (ícono en la pestaña) -->
-<link rel="icon" href="./favicon.ico" type="image/x-icon" />
-
-
+  <!-- FAVICON -->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,12 +16,25 @@
 
   <!-- ESTILOS CSS -->
   <link rel="stylesheet" href="./styles.css" />
-</head>
 
+  <!-- ESTILOS ADICIONALES -->
+  <style>
+    #carrito-enlace {
+      font-weight: bold;
+      color: #f879a5;
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    #carrito-enlace:hover {
+      color: #d86891;
+    }
+  </style>
+</head>
 
 <body>
 
-  <!-- ENCABEZADO / HEADER -->
+  <!--ENCABEZADO - HEADER-->
   <header id="INICIO" class="banner">
     <a href="./" target="_blank" rel="noopener noreferrer" class="logo-header">
       <img src="./RECURSOS AUDIOVISUALES/pngwing.com.png" width="15%" alt="Logo Inicio BTS Army" />
@@ -42,6 +53,11 @@
         <li><a href="talles.html">Guía de talles</a></li>
         <li><a href="preguntas.html">Preguntas frecuentes</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li>
+          <a href="carrito.html" id="carrito-enlace">
+            🛒 <span id="cantidad-carrito">(0)</span>
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -50,8 +66,6 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
-
-    <!-- SECCIÓN CON FONDO E IMAGEN Y TEXTO -->
     <div class="caja-bts">
       <img src="https://i.pinimg.com/736x/91/8e/03/918e0385a56572b3dfa3102675ec08f4.jpg" alt="Logo BTS" />
       <h2>Merch original de BTS importado desde Corea</h2>
@@ -62,52 +76,48 @@
       <p><strong>Todo lo que buscas y mucho más...</strong></p>
     </section>
 
-    <!-- IMAGEN DESTACADA -->
     <figure style="text-align: center;">
       <img src="./klipartz.com.png" alt="Los siete miembros de BTS" width="30%" />
       <figcaption>OT7</figcaption>
     </figure>
 
-    <!-- SECCIÓN DE REGISTRO DESTACADA -->
     <div class="intro-text">
-      <p>*** <strong>Regístrate y obtené descuentos exclusivos</strong> ***</p>
+      <p><strong>Regístrate y obtené descuentos exclusivos</strong></p>
       <p><a href="./registro.html">Regístrate aquí!</a></p>
     </div>
 
-    <!-- VIDEO EMBEBIDO DE YOUTUBE -->
     <section style="text-align: center; margin: 40px 0;">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/gdZLi9oWNZg?si=DAcnpDSd7lZSNUPG"
         title="Video BTS - Dynamite" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
       </iframe>
     </section>
-
   </main>
 
- <!-- REDES SOCIALES -->
-<div id="redes" class="nube-redes">
-  <h3>🍦 Síguenos en nuestras redes</h3>
-  <p><a href="https://www.youtube.com/@Prh1910" target="_blank" rel="noopener noreferrer">YouTube</a></p>
-  <p><a href="https://www.instagram.com/pamerodriguezhusain/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-  <p><a href="https://www.facebook.com/pamerodriguezhusain/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
-  <p><a href="./contacto.html">Contacto</a></p>
-</div>
-
-<!-- PIE DE PÁGINA / FOOTER -->
-<footer>
-  <div class="nube-bts">
-    <h3>💜 ¿Ya seguís a los chicos?</h3>
-    <p>¡Seguilos en sus redes sociales oficiales!</p>
-
-    <h4>Redes oficiales BTS</h4>
-    <p><a href="https://www.youtube.com/watch?v=HK3LjI2InOg&list=PL_Cqw69_m_yz4JcOfmZb2IDWwIuej1xfN" target="_blank" rel="noopener noreferrer">🎥 YouTube Oficial</a></p>
-    <p><a href="https://www.instagram.com/bts.bighitofficial/" target="_blank" rel="noopener noreferrer">📸 Instagram Oficial</a></p>
-    <p><a href="https://www.facebook.com/bangtan.official" target="_blank" rel="noopener noreferrer">📘 Facebook Oficial</a></p>
-
-    <p class="bts-footer">© 2025 BTS ARMY FOREVER FANSTORE</p>
-    <p><a href="#">🏠 Página principal</a></p>
+  <!-- REDES SOCIALES -->
+  <div id="redes" class="nube-redes">
+    <h3>🍦 Síguenos en nuestras redes</h3>
+    <p><a href="https://www.youtube.com/@Prh1910" target="_blank" rel="noopener noreferrer">YouTube</a></p>
+    <p><a href="https://www.instagram.com/pamerodriguezhusain/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+    <p><a href="https://www.facebook.com/pamerodriguezhusain/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+    <p><a href="./contacto.html">Contacto</a></p>
   </div>
-</footer>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <div class="nube-bts">
+      <h3>💜 ¿Ya seguís a los chicos?</h3>
+      <p>¡Seguilos en sus redes sociales oficiales!</p>
+
+      <h4>Redes oficiales BTS</h4>
+      <p><a href="https://www.youtube.com/watch?v=HK3LjI2InOg&list=PL_Cqw69_m_yz4JcOfmZb2IDWwIuej1xfN" target="_blank" rel="noopener noreferrer">🎥 YouTube Oficial</a></p>
+      <p><a href="https://www.instagram.com/bts.bighitofficial/" target="_blank" rel="noopener noreferrer">📸 Instagram Oficial</a></p>
+      <p><a href="https://www.facebook.com/bangtan.official" target="_blank" rel="noopener noreferrer">📘 Facebook Oficial</a></p>
+
+      <p class="bts-footer">© 2025 BTS ARMY FOREVER FANSTORE</p>
+      <p><a href="#">🏠 Página principal</a></p>
+    </div>
+  </footer>
+  <script src="carrito-utils.js"></script>
 </body>
 </html>
-

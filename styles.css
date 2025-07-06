@@ -4,8 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&family=Fredericka+the+Great&family=Give+You+Glory&display=swap');
 
 :root {
-  --color1: #ffa6f8;
-  --color2: #4788f8;
+  --color1: #fcb4f6;
+  --color2: #3c7eee;
   --color3: #9597f1;
   --color4: #c08ff8;
   --color5: #f784f7;
@@ -19,14 +19,14 @@
   --menta: #a4f5de;
   --rosa: #f879a5;
   --rosa-claro: #ffc8d7;
-  --celeste: #5cb8e6;
+  --celeste: #2badee;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Give You Glory', cursive;
+  font-family: 'Fredericka the Great', cursive;
 }
 
 body {
@@ -41,7 +41,7 @@ body {
 ------------------------------------- */
 header.banner {
   background: linear-gradient(135deg, var(--color1), var(--color3));
-  color: white;
+  color: rgb(255, 109, 231);
   padding: 40px 10px;
   text-align: center;
   border-radius: 20px;
@@ -57,9 +57,19 @@ header.banner h1 {
 
 header.banner p {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   font-family: 'Give You Glory', cursive;
-  color: #fff8f8;
+  color: #f4d8ff;
+}
+#carrito-enlace {
+  font-weight: bold;
+  color: #f879a5;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+#carrito-enlace:hover {
+  color: #d86891;
 }
 
 /* -------------------------------------
@@ -74,7 +84,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #6f3e59;
+  color: #9e53bd;
   font-family: 'Give You Glory', cursive;
   text-decoration: none;
   font-weight: bold;
@@ -82,6 +92,17 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #b57edc;
+}
+/* Carrito junto a "Contacto" */
+nav ul li a#carrito-enlace {
+  margin-left: 8px;
+  color: #f879a5;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+nav ul li a#carrito-enlace:hover {
+  color: #d86891;
 }
 
 /* -------------------------------------
@@ -108,7 +129,7 @@ nav ul li a:hover {
 }
 
 .intro-text a {
-  color: rgb(255, 249, 89);
+  color: rgb(250, 247, 163);
   background-color: var(--rosa-claro);
   padding: 10px 20px;
   border-radius: 15px;
@@ -134,7 +155,7 @@ section.section-fondo {
   border-radius: 15px;
   margin-bottom: 30px;
   color: white;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* -------------------------------------
@@ -187,6 +208,17 @@ section.section-fondo {
   border-radius: 10px;
   padding: 12px;
   font-style: italic;
+}
+.titulo-caja {
+  background-color: var(--menta); 
+  color: var(--color2);                
+  padding: 12px 5px;                  
+  border-radius: 5px;             
+  display: inline-block;                
+  margin-bottom: 600px;                 
+  font-family: 'Pacifico', cursive;   
+  font-size: 2rem;                     
+  box-shadow: 0 4px 4px rgba(0,0,0,0.1); 
 }
 
 /* -------------------------------------
@@ -374,7 +406,7 @@ footer a:hover {
 .nosotros-texto h2 {
   font-size: 2.2rem;
   font-family: 'Pacifico', cursive;
-  color: #b03060;
+  color: #eb6596;
   margin-bottom: 15px;
 }
 
@@ -406,22 +438,21 @@ footer a:hover {
   color: #4a4a4a;
 }
 
+/* PRODUCTOS*/
 
-/* Productos */
+/* Contenedor principal productos */
 #productos {
-  background-color: transparent;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.productos-grid {
+  background-color: pink;
+  padding: 20px 0; 
+  margin-bottom: 600px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  justify-content: center; /* centra los items horizontalmente */
+  gap: 25px; /* espacio entre productos */
 }
 
-.productos-grid .card {
+/* Tarjetas individuales */
+#productos .card {
   background-color: var(--lila);
   border: 2px solid var(--menta);
   width: 280px;
@@ -432,29 +463,30 @@ footer a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.productos-grid .card:hover {
+#productos .card:hover {
   transform: translateY(-7px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-.productos-grid .card img {
+#productos .card img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 15px;
 }
 
-.productos-grid .card h3 {
+#productos .card h3 {
   margin-bottom: 10px;
   color: #832f62;
 }
 
-.productos-grid .card p {
+#productos .card p {
   font-size: 0.95rem;
   margin-bottom: 15px;
   color: #4a4a4add;
 }
 
-.productos-grid .card button {
+/* Si en algún momento agregas botones dentro de las cards */
+#productos .card button {
   background-color: var(--rosa);
   border: none;
   padding: 10px 18px;
@@ -465,8 +497,55 @@ footer a:hover {
   transition: background-color 0.3s;
 }
 
-.productos-grid .card button:hover {
+#productos .card button:hover {
   background-color: #d86891;
+}
+/* Estilos para las tarjetas de producto */
+.card {
+  border: 2px solid #a4f5de;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Botones personalizados */
+.btn-custom {
+  background-color: #f879a5;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-custom:hover {
+  background-color: #d86891;
+}
+
+/* Contenedor carrito oculto por defecto */
+#carrito-container {
+  display: none;
+  margin-top: 30px;
+}
+
+/* Lista carrito sin estilos por defecto */
+#carrito-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Elementos de carrito */
+#carrito-container li {
+  background-color: #fce4ec;
+  border: 1px solid #f8bbd0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 /* Preguntas frecuentes */
