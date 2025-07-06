@@ -5,13 +5,11 @@
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tienda Army Forever BTS</title>
+  <title>Tienda Army Forever BTS - Contacto</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap" rel="stylesheet" />
-  <!-- Incluimos dummy.js para validaciones -->
-  <script src="https://cdn.jsdelivr.net/npm/dummyjs@latest/dist/dummy.min.js"></script>
 </head>
 
 <body>
@@ -96,33 +94,37 @@
   </footer>
 
   <script>
-    const form = document.getElementById('form-contacto');
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('form-contacto');
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-      const nombre = form.nombre.value.trim();
-      const telefono = form.telefono.value.trim();
+        const nombre = form.nombre.value.trim();
+        const telefono = form.telefono.value.trim();
 
-      // Validar nombre con dummy (solo letras y espacios)
-      if (!dummy.regex.alpha(nombre.replace(/\s/g, ''))) {
-        alert('Por favor ingresa un nombre válido, solo letras y espacios.');
-        form.nombre.focus();
-        return;
-      }
+        // Validar que nombre solo tenga letras (mayúsculas, minúsculas), espacios, tildes y ñ
+        const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+        if (!regexNombre.test(nombre)) {
+          alert('Por favor ingresa un nombre válido, solo letras y espacios.');
+          form.nombre.focus();
+          return;
+        }
 
-      // Validar teléfono con dummy (solo números)
-      if (!dummy.regex.numeric(telefono)) {
-        alert('Por favor ingresa un teléfono válido, solo números.');
-        form.telefono.focus();
-        return;
-      }
+        // Validar que teléfono solo tenga números
+        const regexTelefono = /^\d+$/;
+        if (!regexTelefono.test(telefono)) {
+          alert('Por favor ingresa un teléfono válido, solo números.');
+          form.telefono.focus();
+          return;
+        }
 
-      // Si todo está OK, enviamos el formulario
-      form.submit();
+        // El email y otros campos ya tienen validación HTML5
+        form.submit();
+      });
     });
   </script>
 
-  <script src="carrito-utils.js"></script>
+  <script src="carrito-utils.js" defer></script>
 </body>
 </html>
