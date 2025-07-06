@@ -1,103 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- FAVICON (ícono en la pestaña) -->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registro Tienda Army Forever BTS</title>
+  <title>Tienda Army Forever BTS - Registro</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 500px;
-      margin: 40px auto;
-      padding: 10px;
+    /* Estilos para mensajes de error */
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 4px;
+      margin-bottom: 8px;
     }
-    label {
+    /* Estilos para mensaje de éxito */
+    #mensaje-registro {
+      color: green;
+      font-weight: bold;
+      margin-top: 15px;
+      display: none;
+    }
+    /* Mejorar estilo del form */
+    form.contacto label {
       display: block;
       margin-top: 15px;
+      font-weight: 600;
     }
-    input {
+    form.contacto input {
       width: 100%;
       padding: 8px;
-      margin-top: 5px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       box-sizing: border-box;
+      font-size: 1rem;
     }
-    button {
+    form.contacto button {
       margin-top: 20px;
-      padding: 10px 20px;
+      padding: 10px 25px;
       background-color: #f879a5;
       color: white;
       border: none;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
-      font-weight: bold;
-      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
-    button:hover {
+    form.contacto button:hover {
       background-color: #d86891;
-    }
-    .error {
-      color: red;
-      margin-top: 5px;
-      font-size: 0.9em;
-    }
-    .success {
-      color: green;
-      margin-top: 20px;
-      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
-  <h2>Regístrate y obtené descuentos exclusivos</h2>
-  <form id="form-registro" novalidate>
-    <label for="nombre">Nombre completo:</label>
-    <input
-      type="text"
-      id="nombre"
-      name="nombre"
-      required
-      pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
-      title="Solo letras y espacios, por favor."
-      placeholder="Ingresa tu nombre"
-    />
-    <div id="error-nombre" class="error"></div>
+  <!--ENCABEZADO - HEADER-->
+  <header id="INICIO" class="banner">
+    <a href="./" target="_blank" rel="noopener noreferrer" class="logo-header">
+      <img src="./RECURSOS AUDIOVISUALES/pngwing.com.png" width="15%" alt="Logo Inicio BTS Army" />
+    </a>
 
-    <label for="telefono">Teléfono:</label>
-    <input
-      type="tel"
-      id="telefono"
-      name="telefono"
-      required
-      pattern="^\d+$"
-      title="Solo números, por favor."
-      placeholder="Ingresa tu teléfono"
-    />
-    <div id="error-telefono" class="error"></div>
+    <h1>BTS ARMY FOREVER FANSTORE</h1>
 
-    <label for="email">Correo electrónico:</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      required
-      placeholder="Ingresa tu e-mail"
-    />
-    <div id="error-email" class="error"></div>
+    <!-- NAVEGACIÓN -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="registro.html">Regístrate</a></li>
+        <li><a href="beneficios.html">Obtén beneficios</a></li>
+        <li><a href="talles.html">Guía de talles</a></li>
+        <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li>
+          <a href="carrito.html" id="carrito-enlace">
+            🛒 <span id="cantidad-carrito">(0)</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    <label for="password">Contraseña:</label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      required
-      minlength="6"
-      placeholder="Ingresa tu contraseña"
-    />
-    <div id="error-password" class="error"></div>
+    <img src="./RECURSOS AUDIOVISUALES/Adobe Express - file.png" width="10%" alt="Flor de Sakura">
+  </header>
 
-    <button type="submit">Registrarme</button>
-  </form>
+  <section id="registro" class="registro-section">
+    <h2>Regístrate y obtené descuentos exclusivos</h2>
+    <form id="form-registro" class="contacto" action="#" method="POST" novalidate>
+      <label for="nombre">Nombre completo:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        required
+        pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
+        title="Solo letras y espacios, por favor."
+        placeholder="Ingresa tu nombre"
+      />
+      <div id="error-nombre" class="error"></div>
 
-  <p id="mensaje-registro" class="success" style="display:none;"></p>
+      <label for="telefono">Teléfono:</label>
+      <input
+        type="tel"
+        id="telefono"
+        name="telefono"
+        required
+        pattern="^\d+$"
+        title="Solo números, por favor."
+        placeholder="Ingresa tu teléfono"
+      />
+      <div id="error-telefono" class="error"></div>
+
+      <label for="email">Correo electrónico:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Ingresa tu e-mail"
+      />
+      <div id="error-email" class="error"></div>
+
+      <label for="password">Contraseña:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        minlength="6"
+        placeholder="Ingresa tu contraseña"
+      />
+      <div id="error-password" class="error"></div>
+
+      <button type="submit">Registrarme</button>
+    </form>
+
+    <p id="mensaje-registro"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BTS ARMY FOREVER FANSTORE</p>
+    <a href="./index.html">Página principal</a>
+  </footer>
 
   <script>
     const form = document.getElementById('form-registro');
@@ -113,14 +162,14 @@
     form.addEventListener('submit', function(event) {
       event.preventDefault();
 
-      // Limpio errores previos
+      // Limpiar errores y mensaje
       Object.values(errores).forEach(e => e.textContent = '');
       mensajeRegistro.style.display = 'none';
       mensajeRegistro.textContent = '';
 
       let valido = true;
 
-      // Validar nombre: solo letras y espacios
+      // Validar nombre
       const nombre = form.nombre.value.trim();
       const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
       if (!regexNombre.test(nombre)) {
@@ -128,7 +177,7 @@
         valido = false;
       }
 
-      // Validar teléfono: solo números
+      // Validar teléfono
       const telefono = form.telefono.value.trim();
       const regexTelefono = /^\d+$/;
       if (!regexTelefono.test(telefono)) {
@@ -136,14 +185,14 @@
         valido = false;
       }
 
-      // Validar email: lo hace HTML5 con type="email" pero chequeamos campo vacío
+      // Validar email con HTML5, pero chequeamos vacío
       const email = form.email.value.trim();
       if (!email) {
         errores.email.textContent = 'El correo es obligatorio.';
         valido = false;
       }
 
-      // Validar password mínimo 6 caracteres
+      // Validar password
       const password = form.password.value;
       if (password.length < 6) {
         errores.password.textContent = 'La contraseña debe tener al menos 6 caracteres.';
@@ -152,12 +201,13 @@
 
       if (!valido) return;
 
-      // Si todo está ok, mostrar mensaje de éxito
+      // Si todo ok
       mensajeRegistro.textContent = 'Gracias por registrarte, es un registro ficticio.';
       mensajeRegistro.style.display = 'block';
 
       form.reset();
     });
   </script>
+  <script src="carrito-utils.js"></script>
 </body>
 </html>
