@@ -32,6 +32,8 @@
     li.carrito-item img {
       width: 80px;
       border-radius: 8px;
+      object-fit: cover;
+      height: 80px;
     }
     .item-info {
       flex-grow: 1;
@@ -93,6 +95,60 @@
     #finalizar-compra:hover {
       background-color: #d86891;
     }
+
+    /* Si querés usar estilos para tarjetas (opcional) */
+    /*
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    
+    .producto-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 220px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    
+    .producto-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    
+    .producto-card h3 {
+      font-size: 1.1rem;
+      margin: 10px 0 6px;
+      color: #f879a5;
+    }
+    
+    .producto-card p {
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .producto-card button {
+      margin-top: 10px;
+      background-color: #f879a5;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    .producto-card button:hover {
+      background-color: #d86891;
+    }
+    */
   </style>
 </head>
 <body>
@@ -131,11 +187,11 @@
         const li = document.createElement("li");
         li.className = "carrito-item";
         li.innerHTML = `
-          <img src="${producto.imagen}" alt="${producto.nombre}" />
+          <img src="${producto.thumbnail}" alt="${producto.title}" />
           <div class="item-info">
-            <h4>${producto.nombre}</h4>
-            <p>${producto.descripcion}</p>
-            <p><strong>Precio unitario: $${producto.precio}</strong></p>
+            <h4>${producto.title}</h4>
+            <p>${producto.description}</p>
+            <p><strong>Precio unitario: $${producto.price}</strong></p>
           </div>
           <div class="item-cantidad">
             <label for="cantidad-${index}">Cantidad:</label>
@@ -145,13 +201,13 @@
               id="cantidad-${index}" 
               value="${producto.cantidad || 1}" 
               data-index="${index}" 
-              aria-label="Cantidad de ${producto.nombre}"
+              aria-label="Cantidad de ${producto.title}"
             />
             <button 
               class="btn-eliminar" 
               data-index="${index}" 
               title="Eliminar producto" 
-              aria-label="Eliminar ${producto.nombre} del carrito"
+              aria-label="Eliminar ${producto.title} del carrito"
             >&times;</button>
           </div>
         `;
@@ -164,7 +220,7 @@
 
     function actualizarTotal() {
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      let total = carrito.reduce((acc, prod) => acc + prod.precio * (prod.cantidad || 1), 0);
+      let total = carrito.reduce((acc, prod) => acc + prod.price * (prod.cantidad || 1), 0);
       totalCarritoElem.textContent = `Total a pagar: $${total}`;
     }
 
@@ -207,6 +263,11 @@
 
     document.addEventListener("DOMContentLoaded", cargarCarrito);
   </script>
-  <script src="carrito-utils.js"></script>
+  
+  <footer>
+    <p>&copy; 2025 BTS ARMY FOREVER FANSTORE</p>
+    <a href="./index.html">Página principal</a>
+  </footer>
+
 </body>
 </html>

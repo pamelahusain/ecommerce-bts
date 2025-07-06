@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <!-- Incluimos dummy.js desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/dummyjs@latest/dist/dummy.min.js"></script>
 </head>
 
 <body>
@@ -45,16 +47,19 @@
 
   <section id="registro" class="registro-section">
     <h2>Regístrate y obtené descuentos exclusivos</h2>
-    <form id="form-registro" class="contacto" action="#" method="POST">
+    <form id="form-registro" class="contacto" action="#" method="POST" novalidate>
       <label for="nombre">Nombre completo:</label> 
       <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre" />
-  
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="Solo números" />
+
       <label for="email">Correo electrónico:</label>
       <input type="email" id="email" name="email" required placeholder="Ingresa tu e-mail" />
-  
+
       <label for="password">Contraseña:</label>
       <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" minlength="6" />
-  
+
       <button type="submit">Registrarme</button>
     </form>
     <!-- Mensaje de registro -->
@@ -71,18 +76,34 @@
     const mensajeRegistro = document.getElementById('mensaje-registro');
 
     form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Evita que el formulario se envíe y recargue
+      event.preventDefault();
 
-      // Aquí podrías validar datos si quisieras
+      const nombre = form.nombre.value.trim();
+      const telefono = form.telefono.value.trim();
 
-      // Mostrar mensaje de registro ficticio
+      // Validar que nombre contenga solo letras y espacios (incluye tildes y ñ) usando dummy
+      if (!dummy.regex.alpha(nombre.replace(/\s/g, ''))) {
+        alert('Por favor ingresa un nombre válido, solo letras y espacios.');
+        form.nombre.focus();
+        return;
+      }
+
+      // Validar que teléfono contenga solo números usando dummy
+      if (!dummy.regex.numeric(telefono)) {
+        alert('Por favor ingresa un teléfono válido, solo números.');
+        form.telefono.focus();
+        return;
+      }
+
+      // Validación básica de email y password ya la hace HTML5
+
       mensajeRegistro.textContent = "Gracias por registrarte, es un registro ficticio.";
       mensajeRegistro.style.display = "block";
 
-      // Limpiar formulario
       form.reset();
     });
   </script>
-    <script src="carrito-utils.js"></script>
+
+  <script src="carrito-utils.js"></script>
 </body>
 </html>
